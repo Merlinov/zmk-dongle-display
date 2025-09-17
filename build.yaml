@@ -1,6 +1,7 @@
 ---
 include:
-  - board: seeeduino_xiao_ble
+  - board: pro_micro_i2c
     shield: rommana_central_dongle dongle_display
-  - board: seeeduino_xiao_ble
+  - board: pro_micro_i2c
     shield: sweep_central_dongle dongle_display
+
