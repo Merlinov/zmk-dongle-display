@@ -138,10 +138,15 @@ ZMK_SUBSCRIPTION(widget_modifiers, zmk_keycode_state_changed);
 int zmk_widget_modifiers_init(struct zmk_widget_modifiers *widget, lv_obj_t *parent) {
     widget->obj = lv_obj_create(parent);
 
+    // Установить чёрный фон для контейнера модификаторов
+    lv_obj_set_style_bg_color(widget->obj, lv_color_black(), LV_PART_MAIN);
+    lv_obj_set_style_bg_opa(widget->obj, LV_OPA_COVER, LV_PART_MAIN);
+
     lv_obj_set_size(widget->obj, NUM_SYMBOLS * (SIZE_SYMBOLS + 1) + 1, SIZE_SYMBOLS + 3);
-    
+
     static lv_style_t style_line;
     lv_style_init(&style_line);
+    lv_style_set_line_color(&style_line, lv_color_white());  // Яркий цвет для линий выделения
     lv_style_set_line_width(&style_line, 2);
 
     static const lv_point_t selection_line_points[] = { {0, 0}, {SIZE_SYMBOLS, 0} };
