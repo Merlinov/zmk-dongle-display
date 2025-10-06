@@ -61,11 +61,15 @@ int zmk_widget_layer_status_init(struct zmk_widget_layer_status *widget, lv_obj_
     lv_obj_set_width(widget->obj, 50);
     lv_label_set_long_mode(widget->obj, LV_LABEL_LONG_SCROLL_CIRCULAR);
 
+    // Сделать текст ярким (белым)
+    lv_obj_set_style_text_color(widget->obj, lv_color_white(), LV_PART_MAIN);
+
     sys_slist_append(&widgets, &widget->node);
 
     widget_layer_status_init();
     return 0;
 }
+
 
 lv_obj_t *zmk_widget_layer_status_obj(struct zmk_widget_layer_status *widget) {
     return widget->obj;
