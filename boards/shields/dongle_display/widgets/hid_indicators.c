@@ -68,6 +68,8 @@ ZMK_SUBSCRIPTION(widget_hid_indicators, zmk_hid_indicators_changed);
 
 int zmk_widget_hid_indicators_init(struct zmk_widget_hid_indicators *widget, lv_obj_t *parent) {
     widget->obj = lv_label_create(parent);
+    lv_obj_set_style_text_color(widget->obj, lv_color_white(), LV_PART_MAIN);
+
 
     sys_slist_append(&widgets, &widget->node);
 
